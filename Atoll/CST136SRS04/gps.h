@@ -19,7 +19,7 @@ namespace GPS
 		using minute_type = Range<base_minute_type, 0, 60>;
 		using second_type = Range<base_second_type, 0, 60>;
 
-	private:
+
 		const degree_type degree_;
 		const minute_type minute_;
 		const second_type second_;

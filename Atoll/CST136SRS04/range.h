@@ -12,4 +12,7 @@ private:
 
 public:
 	Range() = default;
+
+	value_type setvalue(T);
+
 };
