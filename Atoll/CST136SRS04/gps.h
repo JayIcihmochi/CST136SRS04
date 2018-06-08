@@ -19,7 +19,6 @@ namespace GPS
 		using minute_type = Range<base_minute_type, 0, 60>;
 		using second_type = Range<base_second_type, 0, 60>;
 
-
 		const degree_type degree_;
 		const minute_type minute_;
 		const second_type second_;
@@ -41,6 +40,11 @@ namespace GPS
 
 		Cardinal cardinallat_;
 
+		double coordinate() const
+		{
+			return degree_.getvalue() + minute_.getvalue()/60 + second_.getvalue()/3600;
+		}
+
 		Latitude(const Cardinal cardinal, const degree_type degree, const minute_type minute, const second_type second);
 	};
 }
@@ -53,6 +57,11 @@ namespace GPS
 		enum class Cardinal { W = -1, E = +1 };
 
 		Cardinal cardinallong_;
+
+		double coordinate() const
+		{
+			return degree_.getvalue() + minute_.getvalue()/60 + second_.getvalue()/3600;
+		}
 
 		Longitude(const Cardinal cardinal, const degree_type degree, const minute_type minute, const second_type second);
 	};
@@ -69,5 +78,8 @@ namespace GPS
 
 	public:
 		Location(const std::string name, const Latitude latitude, const Longitude longitude);
+
+		double latcord() const;
+		double lngcord() const;
 	};
 }
