@@ -1,1 +1,1 @@
-
+Notes: The map is not implimented. The distences are stored in a vector, until the end when the entire vector is acumulated, and then stored into a local variable, and then cleaned out for the next list. They're is a stay pointer needed for the forward list. It shouldn't be dangerous, so long as it is taken into account for naming conventions later on.
